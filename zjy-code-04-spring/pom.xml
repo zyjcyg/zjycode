@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>zjy-code</artifactId>
+        <groupId>zjy-code</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>zjy-code-04-spring</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>zjy-code-04-spring-0010-hellospring</module>
+        <module>zjy-code-04-spring-0020-cache</module>
+        <module>zjy-code-04-spring-0030-springkafka</module>
+        <module>zjy-code-04-spring-0040-springjpa</module>
+        <module>zjy-code-04-spring-0050-springjdbctemplate</module>
+    </modules>
+
+
+</project>

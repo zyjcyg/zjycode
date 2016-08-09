@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>zjy-code</artifactId>
+        <groupId>zjy-code</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>zjy-code-07-flume</groupId>
+    <artifactId>zjy-code-07-flume</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>zjy-code-07-flume-0701-helloflume</module>
+        <module>zjy-code-07-flume-0702-flumetohbase</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-sdk</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-auth</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+    </dependencies>
+
+</project>

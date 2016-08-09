@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:/disk1/data/hadoop/dfs/name,/disk2/data/hadoop/dfs/name</value>
+        <description>namenode data dir</description>
+        <final>true</final>
+    </property> 
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:/disk1/data/hadoop/dfs/data,/disk2/data/hadoop/dfs/data</value>
+        <description>
+            datanode data dir
+        </description>
+        <final>true</final>
+    </property> 
+<!--
+    <property>
+        <name>dfs.namenode.checkpoint.dir</name>
+        <value>file:/disk1/data/hadoop/namesecondary,/disk2/data/hadoop/namesecondary</value>
+        <description>
+            secondary namenode data dir
+        </description>
+        <final>true</final>
+    </property>
+-->
+
+    <property>
+        <name>dfs.nameservices</name>
+        <value>nmdata</value>
+        <description>提供服务的NS逻辑名称，与core-site.xml里的对应</description>
+    </property>
+
+    <property>
+        <name>dfs.ha.namenodes.nmdata</name>
+        <value>nowledge-201,nowledge-202</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.nmdata.nowledge-201</name>
+        <value>nowledge-201:9000</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.http-address.nmdata.nowledge-201</name>
+        <value>nowledge-201:50070</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.rpc-address.nmdata.nowledge-202</name>
+        <value>nowledge-202:9000</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.http-address.nmdata.nowledge-202</name>
+        <value>nowledge-202:50070</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.edits.dir</name>
+        <value>/disk1/data/hadoop/journal</value>
+    </property>
+
+    <property>
+        <name>dfs.namenode.shared.edits.dir</name>
+        <value>qjournal://nowledge-201:8485;nowledge-202:8485;nowledge-203:8485/nmdata</value>
+        <description>
+                如何启动JournalNode：在JournalNode的各个节点上部署一份Hadoop代码，在hdfs-site.xml中添加以下配置，设置数据存放目录（注意，只能配置一个目录）：
+                    然后执行“bin/hdfs-daemon.sh start journalnode”，启动JournalNode服务。
+        </description>
+    </property>
+
+    <property>
+        <name>ha.zookeeper.quorum</name>
+        <value>nowledge-201:2181,nowledge-202:2181,nowledge-203:2181</value>
+        <description>指定用于HA的ZooKeeper集群机器列表</description>
+    </property>
+
+    <property>
+        <name>dfs.ha.automatic-failover.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.journalnode.rpc-address</name>
+        <value>0.0.0.0:8485</value>
+        <description>journalnode的rpc地址</description>
+    </property>
+               
+    <property>
+        <name>dfs.client.failover.proxy.provider.nmdata</name>
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+        <description>指定hdfs client来识别bvdata命名空间并在namenode切换期间识别namnode的proxy类</description>
+    </property>
+
+    <property>
+        <name>dfs.ha.fencing.methods</name>
+        <value>sshfence</value>
+    </property>
+         
+    <property>
+        <name>dfs.ha.fencing.ssh.private-key-files</name>
+        <value>/home/hadoop/.ssh/authorized_keys</value>
+    </property>
+
+    <property>
+        <name>ha.failover-controller.cli-check.rpc-timeout.ms</name>
+        <value>60000</value>
+    </property>
+         
+    <property>
+        <name>ipc.client.connect.timeout</name>
+        <value>60000</value>
+    </property>
+    
+    <property>
+        <name>dfs.client.read.shortcircuit.buffer.size</name>
+        <value>4096</value>
+    </property>
+     
+    <property>
+        <name>dfs.image.transfer.bandwidthPerSec</name>
+        <value>4194304</value>
+    </property>
+
+    <property>  
+　　    <name>dfs.hosts.exclude</name>  
+　　    <value>/opt/software/hadoop/etc/hadoop/excludes</value>
+    </property>
+
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value>
+    </property> 
+
+    <property>
+        <name>dfs.permissions</name>
+        <value>false</value>
+    </property> 
+
+    <property>
+        <name>dfs.support.append</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>dfs.datanode.max.xcievers</name>
+        <value>4096</value>
+    </property>
+</configuration>

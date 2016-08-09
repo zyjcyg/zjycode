@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:cache="http://www.springframework.org/schema/cache"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	    http://www.springframework.org/schema/cache
+	    http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--启用注解   定义组件查找规则 -->
+	<context:component-scan base-package="com.netqin">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+
+	<!-- 视图查找器 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView">
+		</property>
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<!-- 加载ehcache缓存配置文件
+
+	说明：在这里我遇到了这样一个问题，当使用@Service等注解的方式将类声明到配置文件中时，
+	就需要将缓存配置import到主配置文件中，否则缓存会不起作用
+	如果是通过<bean>声明到配置文件中时，
+	则只需要在web.xml的contextConfigLocation中加入applicationContext-ehcache.xml即可，
+	不过还是推荐使用如下方式吧，因为这样不会有任何问题
+	-->
+	<import resource="classpath:applicationContext-ehcache.xml"/>
+</beans>
