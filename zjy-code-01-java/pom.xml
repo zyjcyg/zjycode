@@ -17,5 +17,17 @@
         <module>zjy-code-01-java-0030-db</module>
     </modules>
 
+    <repositories>
+        <repository>
+            <id>oschina</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>http://maven.aliyun.com/nexus/service/local/repositories/central/content/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 
 </project>

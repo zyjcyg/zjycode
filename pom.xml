@@ -23,5 +23,17 @@
         <module>zjy-code-12-python</module>
     </modules>
 
+    <repositories>
+        <repository>
+            <id>aliyunmaven</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>http://maven.aliyun.com/nexus/service/local/repositories/central/content/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 
 </project>
