@@ -21,6 +21,7 @@
         <module>zjy-code-10-dubbo</module>
         <module>zjy-code-11-scala</module>
         <module>zjy-code-12-python</module>
+        <module>zjy-code-13-hbase</module>
     </modules>
 
     <repositories>

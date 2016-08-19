@@ -42,7 +42,7 @@ public class MRJobUtils {
     public static Map<String, String> cacheCityInfoFromSmallFile(Context context) throws IOException {
         Map<String, String> cityInfoMap = new HashMap<String, String>();
 
-        BufferedReader bufferedReader = null;
+        BufferedReader bufferedReader;
         Path[] localCacheFiles = DistributedCache.getLocalCacheFiles(context.getConfiguration());
         String deptLine;
         for (Path localCacheFile : localCacheFiles) {

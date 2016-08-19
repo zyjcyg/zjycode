@@ -1,7 +1,7 @@
 print "Who do you think I am ?"
-input()
+raw_input()
 print "Oh, yes!"
 print "how old are you?"
-raw_input()
+input()
 print "Yes!"
 

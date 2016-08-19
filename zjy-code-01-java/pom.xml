@@ -15,6 +15,7 @@
         <module>zjy-code-01-java-0010-jdk</module>
         <module>zjy-code-01-java-0020-json</module>
         <module>zjy-code-01-java-0030-db</module>
+        <module>zjy-code-01-java-0040-io</module>
     </modules>
 
     <repositories>
