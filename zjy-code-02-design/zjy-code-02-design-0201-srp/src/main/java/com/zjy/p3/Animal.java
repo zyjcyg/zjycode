@@ -13,13 +13,17 @@ package com.zjy.p3;
  */
 public class Animal {
 
-    public void breathe(String animal) {
+    public Animals breathe(String animal) {
         if (animal.equalsIgnoreCase("鱼")) {
 
             System.out.println(animal + "呼吸水");
+
+            return new Fish();
         } else {
 
             System.out.println(animal + "呼吸空气");
+
+            return new Birds();
         }
     }
 }

@@ -12,5 +12,17 @@
     <groupId>zjy-code-06-spark-0601-hellospark</groupId>
     <artifactId>zjy-code-06-spark-0601-hellospark</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.sdyc.ndmp</groupId>
+            <artifactId>ndmp-schedule</artifactId>
+            <version>0.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sdyc.ndmp</groupId>
+            <artifactId>ndmp-protobuf</artifactId>
+            <version>0.12.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

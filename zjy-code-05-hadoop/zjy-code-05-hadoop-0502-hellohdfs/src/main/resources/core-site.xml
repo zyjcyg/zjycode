@@ -30,6 +30,6 @@
 
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://nowledgedata-n7:9000</value>
+        <value>hdfs://cmaster:9000</value>
     </property>
 </configuration>

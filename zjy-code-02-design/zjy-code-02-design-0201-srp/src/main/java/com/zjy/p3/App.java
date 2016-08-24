@@ -20,5 +20,8 @@ public class App {
         animal.breathe("猪");
         animal.breathe("鱼");
 
+
+        new Animal();
+
     }
 }

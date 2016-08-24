@@ -24,7 +24,7 @@ public class HDFSCommandTest {
         try {
             final FileSystem fileSystem = FileSystem.get(new Configuration());
             String path = "/user/zjy/test/";
-            lsTest(fileSystem,path);
+//            lsTest(fileSystem,path);
 //            mkdirTest(fileSystem, path);
 //
 //            path = "/user/zjy/test/test1.txt";
@@ -34,13 +34,13 @@ public class HDFSCommandTest {
 //            readContentTest(fileSystem, path);
 
 
-//            String srcPath = "E:\\myspace\\code\\zjy-code\\zjy-code-05-hadoop\\zjy-code-05-hadoop-0502-hellohdfs\\src\\main\\resources\\test.txt";
-//            uploadFileToHDFSTest(fileSystem, srcPath, path);
+            String srcPath = "E:\\myspace\\code\\zjycode\\zjy-code-05-hadoop\\zjy-code-05-hadoop-0502-hellohdfs\\src\\main\\resources\\test.txt";
+            uploadFileToHDFSTest(fileSystem, srcPath, path);
 
 
-            String srcPath = "/user/zjy/test/test.txt";
-            String dstPath = "D:/download";
-            dwdFileFromHDFSTest(fileSystem, srcPath, dstPath);
+//            String srcPath = "/user/zjy/test/test.txt";
+//            String dstPath = "D:/download";
+//            dwdFileFromHDFSTest(fileSystem, srcPath, dstPath);
 
         } catch (Exception e) {
             e.printStackTrace();
