@@ -22,6 +22,7 @@
         <module>zjy-code-11-scala</module>
         <module>zjy-code-12-python</module>
         <module>zjy-code-13-hbase</module>
+        <module>zjy-code-00-test</module>
     </modules>
 
     <repositories>
