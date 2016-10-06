@@ -14,6 +14,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>zjy-code-08-kafka-0010-hellokafka</module>
+        <module>zjy-code-08-kafka-0020-kafkaclients</module>
+        <module>zjy-code-08-kafka-0030-spring-kafka</module>
     </modules>
 
 
