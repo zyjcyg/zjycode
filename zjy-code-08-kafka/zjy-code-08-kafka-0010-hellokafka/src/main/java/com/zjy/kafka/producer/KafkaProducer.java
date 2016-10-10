@@ -34,14 +34,20 @@ public class KafkaProducer {
 
         int i = 0;
 
-        while (i < 10) {
+        /*while (i < 10) {
             sendData("hello kafka " + i++);
+        }*/
+        while (true){
+            sendData(i++ + "Hello");
+            System.out.println("发送一条数据");
         }
+
     }
+
 
     public static void sendData(String data) {
 
-        kafkaProducer.send(new KeyedMessage<String, byte[]>("connector-topic", data.getBytes()));
+        kafkaProducer.send(new KeyedMessage<String, byte[]>("liuyu-test", data.getBytes()));
 
     }
 }
