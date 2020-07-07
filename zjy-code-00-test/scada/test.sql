@@ -18,3 +18,18 @@ WHERE t.`availbility_status` != '运行'
 GROUP BY t.`turbine_id`,
   t.`availbility_status`,
   t.`active_code` 
+
+
+SELECT 
+  t.`turbine_id`,
+  COUNT(*) AS count_num,
+  t.`active_power_avg` 
+FROM
+  t_ten_minute_log t 
+WHERE t.`status_bit_mask` = 12 
+  AND t.`create_time` BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 DAY) 
+  AND CURDATE() 
+  AND t.`stand_wind_spd` BETWEEN 0.25 
+  AND 0.75 
+GROUP BY t.`turbine_id`,
+  t.`active_power_avg` ;
